@@ -51,14 +51,27 @@ PRIVATE_KEY=0x<your-test-wallet-private-key>
 ```bash
 source .env
 forge script script/DeployEzekingToken.s.sol \
-  --rpc-url $SEPOLIA_RPC_URL --broadcast --private-key $PRIVATE_KEY
+  --rpc-url $SEPOLIA_RPC_URL --broadcast --private-key $PRIVATE_KEY \
+  --gas-estimate-multiplier 800
 ```
+
+> **Gas note:** Sepolia currently charges far more gas for contract creation than
+> forge's local simulation predicts (the node estimates ~5.0M gas for this contract;
+> the local estimate is ~0.8M). Without the multiplier the transaction runs out of
+> gas at the code-deposit step and fails. Unused gas is refunded, and the total
+> cost is a tiny fraction of a cent of test ETH.
 
 The transaction details are written to `broadcast/DeployEzekingToken.s.sol/11155111/run-latest.json`.
 
-## Deployment
+## Deployment (Sepolia)
 
-Pending: this section is filled in after the Sepolia deployment.
+| Item             | Value |
+| ---------------- | ----- |
+| Network          | Sepolia (chain ID 11155111) |
+| Contract address | [`0x26E4f4C9289d90face214A68279015217E0e4829`](https://sepolia.etherscan.io/address/0x26E4f4C9289d90face214A68279015217E0e4829) |
+| Transaction hash | [`0x39598246a28b6d39df8bb0d8778d29c9a5a7e17deabd6b2e1ee1be881cc30b74`](https://sepolia.etherscan.io/tx/0x39598246a28b6d39df8bb0d8778d29c9a5a7e17deabd6b2e1ee1be881cc30b74) |
+| Block            | 11922490 |
+| Deployer / owner | `0x194a5eDfF78ab1D2bc57DC5F842C2F6433818807` |
 
 ## Tech
 
