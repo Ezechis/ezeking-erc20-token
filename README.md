@@ -4,6 +4,10 @@ A customised ERC-20 token built with [Foundry](https://book.getfoundry.sh/) and
 [OpenZeppelin Contracts v5](https://github.com/OpenZeppelin/openzeppelin-contracts),
 tested locally and deployed to the Sepolia Ethereum testnet. Sample/tutorial project.
 
+## Submission
+
+[Google Doc with repository link, build/test/deployment screenshots and transaction hash](https://docs.google.com/document/d/1bPbW-k0YhQ3hQ7rBTbkeZ5gNfLfzpCnT8ojI-H_UwI4/edit?usp=sharing)
+
 ## Token
 
 | Property       | Value                                   |
